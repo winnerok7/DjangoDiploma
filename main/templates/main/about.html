@@ -1,0 +1,114 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="{% static 'main/style_about.css' %}">
+
+   <title>Vector</title>
+</head>
+
+<body>
+   <div class="main">
+      <div class="header">
+         <div class="logo">
+            <a href="{% url 'main:main' %}" class="logo-item">Vector</a>
+         </div>
+         <a href="#" class="m-menu-link">
+            <i class="fa fa-bars"></i>
+         </a>
+         <div class="menu visible-lg">
+            <ul>
+               <li><a href="{% url 'main:main' %}" class="menu-link">Головна</a></li>
+               <li><a href="{% url 'main:contacts' %}" class="menu-link">Контакти</a></li>
+               <li><a href="{% url 'main:about' %}" class="menu-link">Від нас</a></li>
+               {% if user.is_authenticated %}
+               <li><a href="{% url 'main:profile' %}" class="menu-link">Профіль</a></li>
+               <li><a href="{% url 'main:profile_ad_add' %}" class="get-appl-btn">Подати об'яву</a></li>
+               {% else %}
+               <li><a href="{% url 'main:register' %}" class="get-appl-btn">Зареєструватися</a></li>
+               <li><a href="{% url 'main:login' %}" class="get-appl-btn">Увійти</a></li>
+               {% endif %}
+            </ul>
+         </div>
+      </div>
+      <div class="txt">
+         <div class="text">
+            <h1>Про нашу компанію</h1>
+            <h2>Маленькі мрії та грандіозні плани</h2>
+            <p>Vector – веб-сервіс онлайн-рітейлеру тварин у країні. З 2022 року ми втілюємо маленькі мрії та грандіозні
+                плани мільйонів людей. В нас можна знайти того, кого ви шукаєте. Ми надаємо гарантію, тому що вважаємо, що онлайн-притулок має бути максимально зручним та безпечним. І</p>
+            <h2>Наша мета – бути корисними</h2>
+            <p>Ми віримо, що речі існують для того, щоб робити життя простішим, приємнішим і добрішим. Тому і пошук тієї
+               самої речі має бути швидким, зручним та приємним. Ми не просто продаємо побутову техніку, електроніку,
+               прикраси чи вино. Ми допомагаємо знайти саме те, що потрібно, в одному місці та без зайвих хвилювань, щоб ви
+               не витрачали життя на пошуки, а просто жили щасливо. Vector - це універсальна відповідь на будь-який запит,
+               початок пошуку та його кінцева зупинка, справжній помічник. Ми назавжди позбавляємо своїх покупців від
+               неприємних компромісів, виконуємо бажання та дозволяємо мріяти сміливіше. Завдяки розумному пошуку та
+               чесному сервісу ми робимо життя наших клієнтів трішки кращими прямо зараз</p>
+            <h2>Щастя починається з простих речей</h2>
+            <p>І ми допомагаємо знайти ці речі: закоханим підказуємо чим здивувати один одного; спортивних мотивуємо
+                ніколи не здаватися і швидше прогресувати; господарським даємо можливість створити справжній затишок. Ми
+                хочемо, щоб ви знали, що шукаєте, і могли б аргументувати свій вибір. Для цього ми знімаємо відеоогляди,
+                пишемо статті та відслідковуємо новинки.</p>
+         </div>
+         <div class="stats">
+            <div class="st-item">
+               <h2>
+                  2100
+               </h2>
+               <p>задоволених клієнтів</p>
+            </div>
+            <div class="st-item">
+               <h2>
+                  82%
+               </h2>
+               <p>повторних звернень</p>
+            </div>
+            <div class="st-item">
+               <h2>
+                  97%
+               </h2>
+               <p>вдалих заявок</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="footer-wrap">
+         <div class="footer">
+            <div class="footer-menu">
+               <ul>
+                  <li class="footer-menu-link i1">
+                     <a href="https://www.facebook.com/oleg.melnykov.7" class="l1"><img src="{% static 'main/fc_icon.png' %}"
+                           alt="ico"></a>
+                  </li>
+                  <li class="footer-menu-link i2">
+                     <a href="https://www.instagram.com/document_ks/" class="l2"><img src="{% static 'main/inst_ico.png' %}"
+                           alt="ico"></a>
+                  </li>
+                  <li class="footer-menu-link i3">
+                     <a href="" class="l3"><img src="{% static 'main/email_ico.png' %}" alt="ico"></a>
+                  </li>
+                  <li class="footer-menu-link i4">
+                     <a href="https://goo.gl/maps/KEZ9j1eXAizJKRjv6" class="l4"><img src="{% static 'main/maps_ico.png' %}"
+                           alt="ico"></a>
+                  </li>
+               </ul>
+            </div>
+            <div class="copyright">
+               <a href="/" class="footer-item">Copyright ⓒ 2022. All rights reserved by Vector</a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+    </body>
+
+</html>

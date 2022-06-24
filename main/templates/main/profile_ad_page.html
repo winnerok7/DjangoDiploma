@@ -1,0 +1,42 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}{{ ad.title }} - Профиль пользователя{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row">
+        {% if ad.image %}
+        <div class="col-md-auto"><img src="{{ ad.image.url }}" alt=""
+        class="main-image"></div>
+        {% endif %}
+        <div class="col">
+            <h2>{{ ad.title }}</h2>
+            <p>{{ ad.content }}</p>
+            <p class="font-weight-bold">{{ ad.price }} uah.</p>
+            <p>{{ ad.contacts }}</p>
+            <p class="text-right font-italic">Created at {{ ad.created_at }}</p>
+        </div>
+    </div>
+</div>
+{% if addimg %}
+<div class="d-flex justify-content-between flex-wrap mt-5">
+    {% for img in addimg %}
+    <div>
+        <img class="additional-image" src="{{ img.image.url }}" alt="">
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<p><a href="{% url 'main:profile' %}">Back</a></p>
+{% if comments %}
+<div class="mt-5">
+    {% for comment in comments %}
+    <div class="my-2 p-2 border">
+        <h5>{{ comment.author }}</h5>
+        <p>{{ comment.content }}</p>
+        <p class="text-right font-italic">{{ comment.created_at }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

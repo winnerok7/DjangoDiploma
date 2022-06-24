@@ -1,0 +1,110 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="{% static 'main/style_contacts.css' %}">
+
+
+   <title>Vector</title>
+</head>
+
+<body>
+
+   <div class="main">
+      <div class="header">
+         <div class="logo">
+            <a href="{% url 'main:main' %}" class="logo-item">Vector</a>
+         </div>
+         <a href="#" class="m-menu-link">
+            <i class="fa fa-bars"></i>
+         </a>
+         <div class="menu visible-lg">
+            <ul>
+               <li><a href="{% url 'main:main' %}" class="menu-link">Головна</a></li>
+               <li><a href="{% url 'main:contacts' %}" class="menu-link">Контакти</a></li>
+               <li><a href="{% url 'main:about' %}" class="menu-link">Від нас</a></li>
+               {% if user.is_authenticated %}
+               <li><a href="{% url 'main:profile' %}" class="menu-link">Профіль</a></li>
+               <li><a href="{% url 'main:profile_ad_add' %}" class="get-appl-btn">Подати об'яву</a></li>
+               {% else %}
+               <li><a href="{% url 'main:register' %}" class="get-appl-btn">Зареєструватися</a></li>
+               <li><a href="{% url 'main:login' %}" class="get-appl-btn">Увійти</a></li>
+               {% endif %}
+            </ul>
+         </div>
+      </div>
+      <div class="table">
+         <div class="table-header">
+            <span>Vector</span>
+            <h2>Контакти наших співробітників</h2>
+            <p>До кожного ви можете звернутися особисто за телефоном</p>
+            <hr>
+         </div>
+         <div class="price-tags">
+            <div class="price-tag">
+               <h2>Ольга Сумская</h2>
+               <span>Секретар</span>
+               <p>Номер телефону:</p>
+               <h3>+380994680178</h3>
+            </div>
+            <div class="price-tag">
+               <h2>Олег Мельников</h2>
+               <span>Співробітник</span>
+               <p>Номер телефону:</p>
+               <h3>+380502810517</h3>
+            </div>
+            <div class="price-tag">
+               <h2>Света Янина</h2>
+               <span>Зам. директора</span>
+               <p>Номер телефону:</p>
+               <h3>+38095684233</h3>
+            </div>
+         </div>
+      </div>
+      <div class="contact">
+         <h4>
+            Ми на Google Maps 📍
+         </h4>
+         <a class="mpbtn" href="https://goo.gl/maps/KEZ9j1eXAizJKRjv6"><button class="maps-btn">Подивитись на
+               мапі</button></a>
+      </div>
+      <div class="footer-wrap">
+         <div class="footer">
+            <div class="footer-menu">
+               <ul>
+                  <li class="footer-menu-link i1">
+                     <a href="https://www.facebook.com/oleg.melnykov.7" class="l1"><img src="{% static 'main/fc_icon.png' %}"
+                           alt="ico"></a>
+                  </li>
+                  <li class="footer-menu-link i2">
+                     <a href="https://www.instagram.com/document_ks/" class="l2"><img src="{% static 'main/inst_ico.png' %}"
+                           alt="ico"></a>
+                  </li>
+                  <li class="footer-menu-link i3">
+                     <a href="" class="l3"><img src="{% static 'main/email_ico.png' %}" alt="ico"></a>
+                  </li>
+                  <li class="footer-menu-link i4">
+                     <a href="https://goo.gl/maps/KEZ9j1eXAizJKRjv6" class="l4"><img src="{% static 'main/maps_ico.png' %}"
+                           alt="ico"></a>
+                  </li>
+               </ul>
+            </div>
+            <div class="copyright">
+               <a href="/" class="footer-item">Copyright ⓒ 2022. All rights reserved by Vector</a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</body>
+
+</html>
